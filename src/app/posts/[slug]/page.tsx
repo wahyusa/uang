@@ -7,7 +7,8 @@ import keystaticConfig from "../../../../keystatic.config";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
-export default async function Post({ params }: { params: { slug: string } }) {
+export default async function Post(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const post = await reader.collections.posts.read(params.slug);
   if (!post) {
     return <div>No Post Found</div>;
