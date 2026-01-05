@@ -1,6 +1,7 @@
 // keystatic.config.ts
 import { config, fields, collection } from "@keystatic/core";
 import { wrapper } from "@keystatic/core/content-components";
+import Testimonial from "./src/components/Testimonial";
 
 export default config({
   storage: {
@@ -22,6 +23,16 @@ export default config({
               schema: {
                 author: fields.text({ label: "Author" }),
                 role: fields.text({ label: "Role" }),
+              },
+              ContentView: (props) => {
+                return (
+                  <Testimonial
+                    author={props.value.author}
+                    role={props.value.role}
+                  >
+                    {props.children}
+                  </Testimonial>
+                );
               },
             }),
           },
