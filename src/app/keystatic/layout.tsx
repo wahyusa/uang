@@ -1,5 +1,4 @@
-// src/app/keystatic/layout.tsx
-import KeystaticApp from "./keystatic";
+import {KeystaticApp} from "./keystatic";
 
 export default function Layout() {
   return (
