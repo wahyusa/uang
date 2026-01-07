@@ -6,11 +6,7 @@ type TestimonialProps = {
   children: React.ReactNode;
 };
 
-export default function Testimonial({
-  author,
-  role,
-  children,
-}: TestimonialProps) {
+export const Testimonial = ({ author, role, children }: TestimonialProps) => {
   return (
     <figure className="border-l-2 pl-4 my-4">
       <blockquote className="italic text-sky-400">{children}</blockquote>
@@ -19,4 +15,4 @@ export default function Testimonial({
       </figcaption>
     </figure>
   );
-}
+};

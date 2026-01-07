@@ -6,7 +6,7 @@ import Markdoc from "@markdoc/markdoc";
 import keystaticConfig from "../../../../keystatic.config";
 
 // Tried to directly use the same component for Rendering markdoc
-import Testimonial from "@/components/Testimonial";
+import {Testimonial} from "@/components/Testimonial";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
