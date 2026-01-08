@@ -1,6 +1,6 @@
 import { fields } from "@keystatic/core";
 import { wrapper } from "@keystatic/core/content-components";
-import { Testimonial } from "@/components/Testimonial";
+import { Testimonial } from "@/components/blocks/Testimonial";
 
 // Keystatic specific to CMS blocks live preview
 export const keystaticBlocks = {

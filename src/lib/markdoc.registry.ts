@@ -1,5 +1,5 @@
 import { Config } from "@markdoc/markdoc";
-import { Testimonial } from "@/components/Testimonial";
+import { Testimonial } from "@/components/blocks/Testimonial";
 
 export const markdocConfig: Config = {
   tags: {
