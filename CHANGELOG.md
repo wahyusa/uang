@@ -1,6 +1,8 @@
-- [2026-01-08] fix: use use 'import { Testimonial }
-- [2026-01-07] fix: lint warning on unused import
-- [2026-01-07] chore: Add `.vscode/settings.json` for git commit scope stuff
-- [2026-01-07] refactor(components): adjust Testimonial with named export and type
-- [2026-01-07] refactor: src/keystatic stuff now using named import following eslint
-- [2026-01-07] refactor: Add new eslin configuration and rule for import
+- [2026-01-08] style: format code using unified prettier settings
+- [2026-01-08] chore: tooling add prettier, prettier tailwind,
+- [2026-01-08] fix: lint error should use `import type`
+- [2026-01-08] refactor: isolate public pages into (public) route group
+- [2026-01-08] refactor: Move content components to `src/components/blocks/`
+- [2026-01-08] refactor: extract component schemas to centralized registry
+- [2026-01-08] docs: add tooling documentation and changelog
+- [2026-01-08] fix: use  use 'import { Testimonial }
