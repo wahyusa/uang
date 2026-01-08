@@ -1,4 +1,4 @@
-import { Config } from "@markdoc/markdoc";
+import type { Config } from "@markdoc/markdoc";
 import { Testimonial } from "@/components/blocks/Testimonial";
 
 export const markdocConfig: Config = {
