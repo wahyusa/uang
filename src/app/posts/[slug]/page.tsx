@@ -5,8 +5,7 @@ import Markdoc from "@markdoc/markdoc";
 
 import keystaticConfig from "../../../../keystatic.config";
 
-// Tried to directly use the same component for Rendering markdoc
-import {Testimonial} from "@/components/Testimonial";
+import { markdocConfig, markdocBlocks } from "@/lib/markdoc.registry";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
@@ -23,18 +22,6 @@ export default async function Post(props: {
 
   const { node } = await post.content();
 
-  const markdocConfig = {
-    tags: {
-      Testimonial: {
-        render: "Testimonial",
-        attributes: {
-          author: { type: String },
-          role: { type: String },
-        },
-      },
-    },
-  };
-
   const errors = Markdoc.validate(node, markdocConfig);
   if (errors.length) {
     console.error(errors);
@@ -47,9 +34,7 @@ export default async function Post(props: {
     <>
       <h1>{post.title}</h1>
       {Markdoc.renderers.react(renderable, React, {
-        components: {
-          Testimonial: Testimonial,
-        },
+        components: markdocBlocks,
       })}
       <hr />
       <a href={`/posts`}>Back to Posts</a>

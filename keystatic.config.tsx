@@ -1,7 +1,6 @@
 // keystatic.config.ts
 import { config, fields, collection } from "@keystatic/core";
-import { wrapper } from "@keystatic/core/content-components";
-import {Testimonial} from "./src/components/Testimonial";
+import { keystaticBlocks } from "@/lib/keystatic.registry"; // Import the registry
 
 export default config({
   storage: {
@@ -17,25 +16,8 @@ export default config({
         title: fields.slug({ name: { label: "Title" } }),
         content: fields.markdoc({
           label: "Content",
-          components: {
-            Testimonial: wrapper({
-              label: "Testimonial",
-              schema: {
-                author: fields.text({ label: "Author" }),
-                role: fields.text({ label: "Role" }),
-              },
-              ContentView: (props) => {
-                return (
-                  <Testimonial
-                    author={props.value.author}
-                    role={props.value.role}
-                  >
-                    {props.children}
-                  </Testimonial>
-                );
-              },
-            }),
-          },
+          // Keystatic specific to CMS blocks live preview
+          components: keystaticBlocks,
         }),
       },
     }),
