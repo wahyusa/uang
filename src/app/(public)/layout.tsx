@@ -12,10 +12,8 @@ export default function FrontendLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div
-      className="max-w-[65ch] mx-auto"
-    >
-      <nav className="flex items-center gap-x-6 mb-8 p-4">
+    <div className="mx-auto max-w-[65ch]">
+      <nav className="mb-8 flex items-center gap-x-6 p-4">
         <Link href={`/`}>Home</Link>
         <Link href={`/posts`}>Posts</Link>
       </nav>

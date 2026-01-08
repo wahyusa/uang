@@ -1,4 +1,4 @@
-- [2026-01-08] fix: use  use 'import { Testimonial }
+- [2026-01-08] fix: use use 'import { Testimonial }
 - [2026-01-07] fix: lint warning on unused import
 - [2026-01-07] chore: Add `.vscode/settings.json` for git commit scope stuff
 - [2026-01-07] refactor(components): adjust Testimonial with named export and type

@@ -9,9 +9,7 @@ import { markdocConfig, markdocBlocks } from "@/lib/markdoc.registry";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
-export default async function Post(props: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function Post(props: { params: Promise<{ slug: string }> }) {
   const params = await props.params;
 
   const post = await reader.collections.posts.read(params.slug);
