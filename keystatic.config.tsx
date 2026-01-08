@@ -1,7 +1,7 @@
 // keystatic.config.ts
 import { config, fields, collection } from "@keystatic/core";
 import { wrapper } from "@keystatic/core/content-components";
-import Testimonial from "./src/components/Testimonial";
+import {Testimonial} from "./src/components/Testimonial";
 
 export default config({
   storage: {
