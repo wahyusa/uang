@@ -1,11 +1,17 @@
-// keystatic.config.ts
+// keystatic.config.tsx
 import { config, fields, collection } from "@keystatic/core";
-import { keystaticBlocks } from "@/lib/keystatic.registry"; // Import the registry
+import { keystaticBlocks } from "@/lib/keystatic.registry";
 
 export default config({
-  storage: {
-    kind: "local",
-  },
+  // 1. Logic to switch between Local (Dev) and GitHub (Prod)
+  storage:
+    process.env.NODE_ENV === "development"
+      ? { kind: "local" }
+      : {
+          kind: "github",
+          repo: "wahyusa/uang",
+        },
+
   collections: {
     posts: collection({
       label: "Posts",
@@ -16,7 +22,6 @@ export default config({
         title: fields.slug({ name: { label: "Title" } }),
         content: fields.markdoc({
           label: "Content",
-          // Keystatic specific to CMS blocks live preview
           components: keystaticBlocks,
         }),
       },
